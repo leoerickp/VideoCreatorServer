@@ -49,6 +49,12 @@ tsc
 yarn start
 ```
 
+- if you prefer execute using docker compose you can execute the following command:
+
+```console
+docker-compose -f docker-compose.prod.yml --env-file .env.prod up --build
+```
+
 ## Frontend VideoCreatorFrontend
 
 _The Frontend code repostory is available in:_ [VideoCreator-Frontend](https://github.com/leoerickp/VideoCreatorFrontend.git).
