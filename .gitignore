@@ -1,3 +1,5 @@
 /dist
 /node_modules
 /postgres
+docker-compose.prod.yml
+Dockerfile
