@@ -10,6 +10,7 @@ export class UsersService {
             const salt = bcrypt.genSaltSync();
             newUser.password = bcrypt.hashSync(password, salt);
             const user = await User.create({ ...newUser });
+            delete user.dataValues.password;
             return { ...user.dataValues };
         } catch (error) {
             if (error) {

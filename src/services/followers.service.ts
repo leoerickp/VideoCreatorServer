@@ -24,7 +24,7 @@ export class FollowersService {
                 limit,
                 offset
             });
-            return { count, Followers: rows }
+            return { count, followers: rows }
         } catch (error) {
             throw new Error(error as string);
         }
@@ -34,12 +34,12 @@ export class FollowersService {
         try {
             const { count, rows } = await Follower.findAndCountAll({
                 where: {
-                    followersId: user.id
+                    followerId: user.id
                 },
                 limit,
                 offset
             });
-            return { count, Followeds: rows }
+            return { count, followeds: rows }
         } catch (error) {
             throw new Error(error as string);
         }

@@ -35,10 +35,10 @@ export class SeedService {
 
     private async createTables() {
         try {
-            //await User.sync({ force: true });
-            //const userIds: string[] = await this.loadUsers();
-            //await Video.sync({ force: true });
-            //this.loadVideos(userIds);
+            await User.sync({ force: true });
+            const userIds: string[] = await this.loadUsers();
+            await Video.sync({ force: true });
+            this.loadVideos(userIds);
             await Follower.sync({ force: true });
             await Like.sync({ force: true });
         } catch (error) {

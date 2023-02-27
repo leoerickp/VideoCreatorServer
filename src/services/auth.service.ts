@@ -26,9 +26,12 @@ export class AuthService {
         }
     }
 
-    async signUp(newUser: inputNewUser): Promise<IUser | undefined> {
+    async signUp(newUser: inputNewUser) {
         try {
-            return await usersService.create(newUser);
+            const user = await usersService.create(newUser);
+            const { id }: any = user;
+            const token = await generateJWT(id);
+            return { token, user }
         } catch (error) {
 
         }

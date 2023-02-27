@@ -7,7 +7,4 @@ export class PublicController {
     sendErrorPage(req: Request, res: Response) {
         res.sendFile(publicPath + 'Error404.html');
     }
-    sendContactPage(req: Request, res: Response) {
-        res.sendFile(publicPath + 'contact.html');
-    }
 }

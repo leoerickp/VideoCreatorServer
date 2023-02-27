@@ -60,21 +60,7 @@ export class VideosService {
     }
     async getAllMyFavorites(user: IUser, { limit = 10, offset = 0 }: any) {
         try {
-            //TODO borrar esto
-            /*const videos = await db.query(
-                `
-                select videos.*, fullName, email, urlPhoto from videos
-                inner join users on videos.userId=users.id
-                order by videos.createdAt desc
-                `,
-                {
-                    type: QueryTypes.SELECT
-                }
-            );*/
             const { count, rows } = await Video.findAndCountAll({
-                /*where: {
-                    userId: user.id
-                },*/
                 include: [
                     { model: Like, required: true, where: { userId: user.id } },
                     {

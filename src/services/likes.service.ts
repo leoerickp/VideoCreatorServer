@@ -24,7 +24,7 @@ export class LikesService {
                 limit,
                 offset
             });
-            return { count, Likes: rows }
+            return { count, likes: rows }
         } catch (error) {
             throw new Error(error as string);
         }
