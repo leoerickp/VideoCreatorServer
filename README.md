@@ -55,6 +55,9 @@ yarn start
 docker-compose -f docker-compose.prod.yml --env-file .env.prod up --build
 ```
 
+- To init database with test data you can execute:
+  **http://localhost:3000/api/seed**
+
 ## Frontend VideoCreatorFrontend
 
 _The Frontend code repostory is available in:_ [VideoCreator-Frontend](https://github.com/leoerickp/VideoCreatorFrontend.git).
