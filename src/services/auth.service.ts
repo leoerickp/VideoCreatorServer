@@ -33,7 +33,7 @@ export class AuthService {
             const token = await generateJWT(id);
             return { token, user }
         } catch (error) {
-
+            throw new Error(error as string);
         }
     }
 }

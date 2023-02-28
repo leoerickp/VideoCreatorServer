@@ -18,6 +18,7 @@ usersRoutes.get('/', [
     ValidFields
 ], usersController.getAll);
 usersRoutes.get('/:id', [
+    validateJWT,
     check('id', 'id field must be a UUID value').isUUID(4),
     ValidFields
 ], usersController.getOneById);

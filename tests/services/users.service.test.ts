@@ -60,7 +60,7 @@ describe('UsersService test', () => {
 
         const user = {
             update() {
-                return { ...result.users[0] }
+                return { ...result.users[0], isActive: false }
             }
         }
         jest.spyOn(usersService, 'getOneById').mockImplementation(() => user as any);
