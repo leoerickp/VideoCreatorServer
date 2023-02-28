@@ -10,6 +10,7 @@ import { videosRoutes } from '../routes/videos.routes';
 import { authRoutes } from '../routes/auth.routes';
 import { followersRoutes } from '../routes/followers.routes';
 import { likesRoutes } from '../routes/likes.routes';
+import { swaggerDocs } from '../routes/swagger.routes';
 
 export class Server {
     private app: Application;
@@ -22,6 +23,7 @@ export class Server {
         seed: '/api/seed',
         users: '/api/users',
         videos: '/api/videos',
+        swagger: '/api/docs'
     }
     constructor() {
         this.app = express();
@@ -59,6 +61,7 @@ export class Server {
         this.app.use(this.path.likes, likesRoutes);
         this.app.use(this.path.users, usersRoutes);
         this.app.use(this.path.videos, videosRoutes);
+        swaggerDocs(this.app, this.path.swagger, this.port);
         this.app.use(this.path.public, publicRoutes);
     }
 
