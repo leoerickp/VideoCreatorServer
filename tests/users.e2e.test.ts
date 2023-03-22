@@ -24,7 +24,7 @@ describe('Users API E2E test', () => {
         jest.clearAllMocks();
     })
     describe('GET/', () => {
-        test('should responde status code 401 (Unauthorized) without token', async () => {
+        test('should response status code 401 (Unauthorized) without token', async () => {
             const expectedResponse = {
                 msg: "Token authorization is required"
             };
@@ -32,7 +32,7 @@ describe('Users API E2E test', () => {
             expect(response.statusCode).toBe(StatusCodes.UNAUTHORIZED);
             expect(response.body).toEqual(expectedResponse);
         });
-        test('should responde status code 200 with token', async () => {
+        test('should response status code 200 with token', async () => {
             const response = await request(app)
                 .get(path)
                 .set('Authorization', 'Bearer ' + token);
@@ -42,7 +42,7 @@ describe('Users API E2E test', () => {
     });
 
     describe('GET/id', () => {
-        test('should responde status code 401 (Unauthorized) without token', async () => {
+        test('should response status code 401 (Unauthorized) without token', async () => {
             const expectedResponse = {
                 msg: "Token authorization is required"
             };
@@ -53,7 +53,7 @@ describe('Users API E2E test', () => {
         });
     });
     describe('GET/id', () => {
-        test('should responde status code 200 with token', async () => {
+        test('should response status code 200 with token', async () => {
             const response = await request(app)
                 .get(path + '/' + user.id)
                 .set('Authorization', 'Bearer ' + token);
